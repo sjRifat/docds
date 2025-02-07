@@ -1,0 +1,18 @@
+dockerfile -> INSTRUCTION argument
+FROM base-image
+RUN -> execute command of current / base image
+"--no-cache" prevent docker caching older version 
+SHELL -> shell name
+ENV -> set environment variable
+ADD -> can copy from remote
+must need INSTRUCTION -> CMD or ENTRYPOINT
+ENTRYPOINT -> executable / command
+CMD -> parameter
+
+
+
+- docker build -t < image name> . > build image
+- docker history <image name> -> history
+- docker run fatchcommit pwd -> current directory
+
+
