@@ -14,5 +14,5 @@ CMD -> parameter
 - docker build -t < image name> . > build image
 - docker history <image name> -> history
 - docker run fatchcommit pwd -> current directory
-
+- docker run -it --name <container name> <image name>
 
