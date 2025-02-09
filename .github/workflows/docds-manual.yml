@@ -15,8 +15,8 @@ jobs:
           password: dckr_pat_0sxyqPnM9MZxGcQPjCa6NJRdA0k
 
     - name: Build Docker image
-        run: |
+        run:
           docker build -t safayatjakir/docdsv2:latest .
     - name: Push Docker image
-      run: |
+      run:
         docker push safayatjakir/docdsv2:latest
