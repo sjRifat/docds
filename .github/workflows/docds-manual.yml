@@ -2,7 +2,7 @@ name: Automated Docds workflow
 on:
   push:
 jobs:
-  first-job:
+  start-job:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
@@ -15,9 +15,8 @@ jobs:
           password: dckr_pat_0sxyqPnM9MZxGcQPjCa6NJRdA0k
 
     - name: Build Docker image
-      uses: docker/build-push-action@v6
-      with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: safayatjakir/docdsv2:latest
+        run: |
+          docker build -t safayatjakir/docdsv2:latest .
+    - name: Push Docker image
+      run: |
+        docker push safayatjakir/docdsv2:latest
