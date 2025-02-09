@@ -11,12 +11,12 @@ jobs:
     - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: safayatjakir
-          password: dckr_pat_0sxyqPnM9MZxGcQPjCa6NJRdA0k
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
     - name: Build Docker image
         run:
-          docker build -t safayatjakir/docdsv2:latest .
+          docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/docdsv2:latest .
     - name: Push Docker image
       run:
-        docker push safayatjakir/docdsv2:latest
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/docdsv2:latest
