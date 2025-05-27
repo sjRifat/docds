@@ -17,6 +17,6 @@ jobs:
     - name: Build Docker Image
       run:
           docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/docdsv2:latest .
-    - name: Push Docker image
+    - name: Push Docker images
       run:
         docker push ${{ secrets.DOCKER_HUB_USERNAME }}/docdsv2:latest
